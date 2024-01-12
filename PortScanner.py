@@ -4,10 +4,6 @@ from rich.table import Table
 from rich.console import Console
 import socket
 
-banner = pyfiglet.figlet_format("Python Port Scanner")
-print(banner)
-print("Tool per lo scan delle reti\n")
-
 def scan(target_ip, start_port, end_port):
     open_ports = []
     
@@ -75,7 +71,6 @@ def make_tab(target_ip, open_ports):
     
 def main():
     pr = True
-
     while pr == True:
         target_ip = input("\nInserisci l'indirizzo IP da testare (x per uscire): ")
         if target_ip == "x":
@@ -88,5 +83,9 @@ def main():
 
             print()
             make_tab(target_ip, open_ports)
+
+banner = pyfiglet.figlet_format("Python Port Scanner")
+print(banner)
+print("Tool per lo scan delle reti\n")
 
 main()
