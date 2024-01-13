@@ -27,7 +27,7 @@ def scan(target_ip, start_port, end_port):
             # che è adatta per le applicazioni in cui è importante che i dati vengano consegnati 
             # nell'ordine corretto e senza perdite
             
-            #Quindi, l'istruzione socket.socket(socket.AF_INET, socket.SOCK_STREAM) sta creando 
+            # Quindi, l'istruzione socket.socket(socket.AF_INET, socket.SOCK_STREAM) sta creando 
             # un nuovo oggetto socket che utilizzerà la famiglia di indirizzi IPv4 e il protocollo TCP 
             # per la comunicazione orientata alla connessione. 
             # Questo tipo di socket è adatto per applicazioni in cui è necessario un flusso affidabile 
@@ -41,8 +41,7 @@ def scan(target_ip, start_port, end_port):
             
             # Utilizza il metodo 'connect_ex' per tentare la connessione alla porta specificata sul target IP.
             result = sock.connect_ex((target_ip, port))
-            #print(f"Port {port}", end = " ")
-            
+                        
             # Verifica se il risultato della connessione è 0, che indica una connessione riuscita.
             if result == 0:
                 # Se la connessione è riuscita, aggiungi la porta alla lista 'open_ports'.
@@ -53,8 +52,6 @@ def scan(target_ip, start_port, end_port):
             
             # Aggiorna la barra di progresso con un avanzamento incrementale
             progress.update(task1, advance=(100/((end_port+1)-start_port)))
-            
-            #print("Tested")
     
     return open_ports
 
